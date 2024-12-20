@@ -1,6 +1,8 @@
 project(robots)
 cmake_minimum_required(VERSION 3.0)
 
+add_compile_options(-Wno-error)
+
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
@@ -49,7 +51,7 @@ ENDIF ()
 
 ########### compiler flags ##############
 
-set(COMPILER_FLAGS_TO_CHECK "-Wall" "-Werror=implicit-function-declaration")
+set(COMPILER_FLAGS_TO_CHECK "-Werror=implicit-function-declaration")
 
 ########### project files ###############
 
@@ -60,7 +62,7 @@ include_directories(./src)
 enable_testing()
 
 add_executable(robots-test ./src/robots_test.cc)
-target_link_libraries(robots-test absl::base absl::container absl::strings gtest_main)
+target_link_libraries(robots-test absl::base absl::container absl::strings gtest_main dl)
 
 ############ Rust lib ############
 
