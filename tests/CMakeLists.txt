@@ -51,7 +51,7 @@ ENDIF ()
 
 ########### compiler flags ##############
 
-set(COMPILER_FLAGS_TO_CHECK "-Werror=implicit-function-declaration")
+set(COMPILER_FLAGS_TO_CHECK "-Wall" "-Werror=implicit-function-declaration")
 
 ########### project files ###############
 
